@@ -1,0 +1,13 @@
+{
+  "EMOJIS": {
+    // TO get the this ID_CODE of emoji, send on chat using / before like: /emoji
+    "pog": "<:pog:11185713112343235552>",
+  },
+  "USERS": {
+    "USERNAME": 1761324963967523265,
+    "RANDOM_ID": 100272723630343290,
+  },
+  "OFFENSES": [
+    "your", "random", "offenses", "here"
+  ]
+}
