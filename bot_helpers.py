@@ -2,6 +2,7 @@ import re
 import discord
 from io import BytesIO
 from gtts import gTTS
+from gtts.lang import tts_langs
 from bot_utils import TZ, USERS
 from datetime import datetime
 
@@ -23,11 +24,17 @@ def datetime_parser(dct):
     return dct
 
 # Generate a speech voice buffer
-def generate_speech_to(text):
+def generate_speech_to(text, lang='en'):
     buffer = BytesIO()
-    gTTS(text).write_to_fp(buffer)
+    # Default is 'en' english, you can check the available langs above
+    # You can change manually or dinamically using some detect_lang package
+    gTTS(text=text, lang=lang, slow=False).write_to_fp(buffer)
     buffer.seek(0)
     return buffer
+
+# Check available langs to speech
+def available_speech_langs():
+    print(tts_langs())
 
 # Save generated speech voice in audios folder
 def generate_speech_to(text):
